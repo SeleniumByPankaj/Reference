@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 public class createAccount_PO 
 {
 	
+	public static By createAnAccountBtn = By.linkText("Create an Account");
+	
 	public static By firstName = By.id("firstname");
 	
 	public static By lastName = By.id("lastname");

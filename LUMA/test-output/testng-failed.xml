@@ -5,7 +5,7 @@
     <classes>
       <class name="testScenarios.SignUpTest">
         <methods>
-          <include name="signUp"/>
+          <include name="signUp" invocation-numbers="0"/>
           <include name="init"/>
         </methods>
       </class> <!-- testScenarios.SignUpTest -->

@@ -1,9 +1,12 @@
 package commons;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,9 +19,10 @@ public class BaseFunctions {
 	
 	public void getDriver()
 	{
-		WebDriverManager.edgedriver().setup();
-		EdgeDriver driver = new EdgeDriver();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	public void getURL (String url)
@@ -43,6 +47,12 @@ public class BaseFunctions {
 	
 	public WebElement getwebElement(By locator) {
 		return driver.findElement(locator);
+	}
+	
+	public List<WebElement> getList (By locator)
+	{
+		List<WebElement> items = driver.findElements(locator);
+		return items;
 	}
 	
 	public enum WaitType {
@@ -102,5 +112,9 @@ public class BaseFunctions {
 			return false;
 		}
 	}
-
+	
+//	public void findElement(By Locator) 
+//	{ 
+//		driver.findElement(By.xpath(String.format(Locator, text))); 
+//	}
 }

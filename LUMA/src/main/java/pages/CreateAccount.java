@@ -13,13 +13,14 @@ public class CreateAccount extends BaseFunctions {
 	{
 		base.getDriver();
 		
-		cr.readConfigProperty("URL");
+		base.getURL(cr.readConfigProperty("URL"));
 		
-		driver.get("https://magento.softwaretestingboard.com/customer/account/create/");
 	}	
 	
 	public void signUp (String firstName, String lastName, String password, String confirmPassword, String email)
 	{
+		base.click(createAccount_PO.createAnAccountBtn);
+		
 		base.setValue(createAccount_PO.firstName,firstName);
 		
 		base.setValue(createAccount_PO.lastName, lastName);

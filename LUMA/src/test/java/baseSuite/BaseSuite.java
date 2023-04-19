@@ -14,7 +14,7 @@ public class BaseSuite {
 	@DataProvider(name = "getValue")
 	public static Object[][] DataSupplier(Method method) throws IOException {
 
-		File file = new File(System.getProperty("user.dir") + "/data/GmailSignUp.xlsx");
+		File file = new File(System.getProperty("user.dir") + "/data/Luma.xlsx");
 
 		FileInputStream fis = new FileInputStream(file);
 

@@ -9,6 +9,14 @@ public class Login extends BaseFunctions {
 	BaseFunctions base = new BaseFunctions();
 	ConfigReader cr = new ConfigReader();
 	
+	public void init()
+	{
+		base.getDriver();
+		
+		base.getURL(cr.readConfigProperty("URL"));
+		
+	}	
+	
 	public void login()
 	{
 		base.click(login_PO.signInBtn);
